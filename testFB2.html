@@ -117,7 +117,23 @@ var pageid = '140282406003843';
      }
      );
  }
- function is_fan_4() {
+ function is_fan_3() {
+     FB.api(
+ {
+    method: 'pages.isFan',
+    page_id: '164709646910260' 
+  },
+  function (response) {
+     if (response) {
+    $("#div_fan4").hide();
+      } else {
+    $("#div_fan4").show();
+    setTimeout("is_fan()", 1000);
+      }
+     }
+     );
+ }
+ /*function is_fan_4() {
 	FB.api('me/likes/164709646910260', function(response) {
 		 //alert(objToString (response));
 	        if (response.data.length == 1) {
@@ -141,8 +157,8 @@ var pageid = '140282406003843';
 
 		        }
 		    }
-		);*/
- }
+		);
+ }*/
  function objToString (obj) {
 	    var str = '';
 	    for (var p in obj) {
