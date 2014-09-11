@@ -16,18 +16,18 @@
 });
 
 //2014/1/3 review
-//FB.Canvas.setAutoResize ¦ü¥G¤wµLªk¨Ï¥Î
+//FB.Canvas.setAutoResize ä¼¼ä¹Žå·²ç„¡æ³•ä½¿ç”¨
 //
 //FB.Canvas.setAutoResize(false);
-//½Ð¨Ï¥Î 
+//è«‹ä½¿ç”¨ 
 //FB.Canvas.setSize({ height: 1000, width: 760 });
 //or
-//½Ð§ï¥Î FB.Canvas.setAutoGrow ¸Õ¸Õ
+//è«‹æ”¹ç”¨ FB.Canvas.setAutoGrow è©¦è©¦
 //https://developers.facebook.com/docs/reference/javascript/FB.Canvas.setAutoGrow/
 //FB.Canvas.setAutoGrow();
 FB.Canvas.setSize({ height: 200, width: 200 });
 var pageid = '140282406003843';
- $(document).ready(function () {    //<--- ½Ð¦Û¤v¤Þ¥Î jquery
+ $(document).ready(function () {    //<--- è«‹è‡ªå·±å¼•ç”¨ jquery
 	
      FB.getLoginStatus(function (response) {
     	 alert(response.status);
@@ -119,7 +119,7 @@ var pageid = '140282406003843';
  }
  function is_fan_4() {
 	FB.api('me/likes/164709646910260', function(response) {
-		 alert(objToString (response));
+		 //alert(objToString (response));
 	        if (response.data.length == 1) {
 	        	  $("#div_fan4").hide();
 	        } else {
@@ -154,15 +154,15 @@ var pageid = '140282406003843';
 	}
  function fb_login(){
      FB.login(function(response) {
-     	alert(objToString(response));
+     	//alert(objToString(response));
          if (response.authResponse) {
              FB.api('/me', function(response) {
-                 //µn¤J¦¨¥\
+                 //ç™»å…¥æˆåŠŸ
                  fb_userlike();
              });
          } else {
-             //µn¤J¥¢±Ñ
-             alert('­n¥ýµn¤JFB¤~¥i¥H°Ñ¥[¦¹¬¡°Ê³á');
+             //ç™»å…¥å¤±æ•—
+             alert('è¦å…ˆç™»å…¥FBæ‰å¯ä»¥åƒåŠ æ­¤æ´»å‹•å–”');
          }
      }, {scope: 'user_likes'});
  }
@@ -174,10 +174,10 @@ var pageid = '140282406003843';
      },function(data){
          isfan=data.length;
          if(isfan){
-             //¦³«öÆg
+             //æœ‰æŒ‰è®š
             // fb_post();
          }else{
-             alert('±zÁÙ¨S«öÆg³á!');
+             alert('æ‚¨é‚„æ²’æŒ‰è®šå–”!');
          }
      });
  }
@@ -188,31 +188,31 @@ var pageid = '140282406003843';
 <div style="width:760px; height:1660px;background:rgba(0,0,0,0.6);z-index:999;position:absolute;top:0px;left:0px;" >
   <div style="display:none;width: 351px; height: 285px; margin-left: 10px; background: #fff; margin-top: 10px; border: #333 2px solid; padding-top:5px;" id="div_fan">
 <div style="width: 349px; margin-left: 0px; font-size: 14px; font-weight: bold; color: #333;">
-½Ð¥ý¥[¤J¯»µ·¹Î¡G
+è«‹å…ˆåŠ å…¥ç²‰çµ²åœ˜ï¼š
 <div id="like_box" style="margin-top: 5px;"><iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/KK486?fref=ts&amp;width=349&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=259" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 360px; height: 259px;" allowTransparency="true"></iframe></div>
 </div>
 </div> 
  <div style="display:none;width: 351px; height: 285px; margin-left: 10px; background: #fff; margin-top: 10px; border: #333 2px solid; padding-top:5px;" id="div_fan1">
 <div style="width: 349px; margin-left: 0px; font-size: 14px; font-weight: bold; color: #333;">
-½Ð¥ý¥[¤J¯»µ·¹Î¡G
+è«‹å…ˆåŠ å…¥ç²‰çµ²åœ˜ï¼š
 <div id="like_box" style="margin-top: 5px;"><iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/mcdonalds.tw&amp;width=349&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=259" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 360px; height: 259px;" allowTransparency="true"></iframe></div>
 </div>
 </div>
 <div style="display:none;width: 351px; height: 285px; margin-left: 10px; background: #fff; margin-top: 10px; border: #333 2px solid; padding-top:5px;" id="div_fan2">
 <div style="width: 349px; margin-left: 0px; font-size: 14px; font-weight: bold; color: #333;">
-½Ð¥ý¥[¤J¯»µ·¹Î¡G
+è«‹å…ˆåŠ å…¥ç²‰çµ²åœ˜ï¼š
 <div id="like_box" style="margin-top: 5px;"><iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/TaiwanApple&amp;width=349&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=259" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 360px; height: 259px;" allowTransparency="true"></iframe></div>
 </div>
 </div>
 <div style="display:none;width: 351px; height: 285px; margin-left: 10px; background: #fff; margin-top: 10px; border: #333 2px solid; padding-top:5px;" id="div_fan3">
 <div style="width: 349px; margin-left: 0px; font-size: 14px; font-weight: bold; color: #333;">
-½Ð¥ý¥[¤J¯»µ·¹Î¡G
+è«‹å…ˆåŠ å…¥ç²‰çµ²åœ˜ï¼š
 <div id="like_box" style="margin-top: 5px;"><iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/SoniaSuiOfficialFanPage&amp;width=349&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=259" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 360px; height: 259px;" allowTransparency="true"></iframe></div>
 </div>
 </div>
 <div style="display:none;width: 351px; height: 285px; margin-left: 10px; background: #fff; margin-top: 10px; border: #333 2px solid; padding-top:5px;" id="div_fan4">
 <div style="width: 349px; margin-left: 0px; font-size: 14px; font-weight: bold; color: #333;">
-½Ð¥ý¥[¤J¯»µ·¹Î¡G
+è«‹å…ˆåŠ å…¥ç²‰çµ²åœ˜ï¼š
 <div id="like_box" style="margin-top: 5px;"><iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/HTCTaiwan&amp;width=349&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=259&amp;appId=330581640432251" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 360px; height: 259px;" allowTransparency="true"></iframe></div>
 </div>
 </div>
