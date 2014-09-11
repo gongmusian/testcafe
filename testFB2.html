@@ -43,31 +43,18 @@ var pageid = '140282406003843';
  });
 
  function is_fan() {
-     FB.api(
- {
-    method: 'pages.isFan',
-    page_id: '140282406003843' 
-
-  },
-  function (response) {
-	 
-	  /*alert(objToString(response));
-	  alert(objToString(response.request_args));
-	  alert(objToString(response.request_args[0]));
-	  alert(objToString(response.request_args[1]));
-	  alert(objToString(response.request_args[2]));
-	  alert(objToString(response.request_args[3]));
-	  alert(objToString(response.request_args[4]));
-	  alert(objToString(response.request_args[5]));
-	  alert(objToString(response.request_args[6]));*/
-     if (response) {
-    $("#div_fan").hide();
-      } else {
-    $("#div_fan").show();
-  //  setTimeout("is_fan()", 1000);
-      }
-     }
-     );
+   FB.api({
+         method: 'fql.query',
+         query: 'select uid from page_fan where page_id =140282406003843' AND uid = me()'
+     },function(data){
+         isfan=data.length;
+         if(isfan){
+           $("#div_fan").hide();
+         }else{
+         	$("#div_fan").show();
+             alert('您還沒按讚喔!');
+         }
+     });
  }
  function is_fan_1() {
      FB.api(
