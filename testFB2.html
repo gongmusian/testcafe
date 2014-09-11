@@ -47,6 +47,7 @@ var pageid = '140282406003843';
          method: 'fql.query',
          query: 'select uid from page_fan where page_id =140282406003843 AND uid = me()'
      },function(data){
+     	console.log(data);
          isfan=data.length;
          if(isfan){
            $("#div_fan").hide();
